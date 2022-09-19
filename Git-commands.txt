@@ -5,3 +5,12 @@
 B
 ABC            ABC
 123
+
+
+
+Scaffold-DbContext "Data Source=DESKTOP-PP0TB7N;Initial Catalog=TestDb;Integrated Security=True" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+
+
+First 
+
+FirstorDefault
