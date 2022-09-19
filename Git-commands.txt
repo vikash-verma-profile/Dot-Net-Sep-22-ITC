@@ -1,0 +1,7 @@
+1.git init ==>intialize the git .it will create a .git hidden folder
+2.git add . ==> this will add all the files that we want to push on remote location
+
+
+B
+ABC            ABC
+123
