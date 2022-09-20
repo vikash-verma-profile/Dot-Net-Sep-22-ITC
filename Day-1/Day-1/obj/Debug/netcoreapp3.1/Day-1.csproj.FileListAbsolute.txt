@@ -54,7 +54,6 @@ C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\bin\Debug
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Runtime.Caching.dll
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp3.0\System.Windows.Extensions.dll
-C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\obj\Debug\netcoreapp3.1\Day-1.csproj.AssemblyReference.cache
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\obj\Debug\netcoreapp3.1\Day-1.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\obj\Debug\netcoreapp3.1\Day-1.AssemblyInfoInputs.cache
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\obj\Debug\netcoreapp3.1\Day-1.AssemblyInfo.cs
@@ -63,3 +62,4 @@ C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\obj\Debug
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\obj\Debug\netcoreapp3.1\Day-1.dll
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\obj\Debug\netcoreapp3.1\Day-1.pdb
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\obj\Debug\netcoreapp3.1\Day-1.genruntimeconfig.cache
+C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\Day-1\Day-1\obj\Debug\netcoreapp3.1\Day-1.csproj.AssemblyReference.cache

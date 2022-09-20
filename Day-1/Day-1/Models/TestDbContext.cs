@@ -17,7 +17,9 @@ namespace Day_1.Models
         {
         }
 
+        public virtual DbSet<TblDepartment> TblDepartments { get; set; }
         public virtual DbSet<TblEmployee> TblEmployees { get; set; }
+        public virtual DbSet<TblSubDepartment> TblSubDepartments { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -32,6 +34,15 @@ namespace Day_1.Models
         {
             modelBuilder.HasAnnotation("Relational:Collation", "SQL_Latin1_General_CP1_CI_AS");
 
+            modelBuilder.Entity<TblDepartment>(entity =>
+            {
+                entity.ToTable("tblDepartment");
+
+                entity.Property(e => e.Id).ValueGeneratedNever();
+
+                entity.Property(e => e.DepartmentName).HasMaxLength(50);
+            });
+
             modelBuilder.Entity<TblEmployee>(entity =>
             {
                 entity.ToTable("tblEmployee");
@@ -45,6 +56,15 @@ namespace Day_1.Models
                     .IsUnicode(false);
 
                 entity.Property(e => e.Salary).HasColumnType("decimal(7, 2)");
+            });
+
+            modelBuilder.Entity<TblSubDepartment>(entity =>
+            {
+                entity.ToTable("tblSubDepartment");
+
+                entity.Property(e => e.Id).HasColumnName("ID");
+
+                entity.Property(e => e.SubDepartment).HasMaxLength(50);
             });
 
             OnModelCreatingPartial(modelBuilder);

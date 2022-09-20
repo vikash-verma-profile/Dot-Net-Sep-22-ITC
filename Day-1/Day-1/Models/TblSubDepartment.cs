@@ -5,12 +5,10 @@ using System.Collections.Generic;
 
 namespace Day_1.Models
 {
-    public partial class TblEmployee
+    public partial class TblSubDepartment
     {
         public int Id { get; set; }
-        public string Name { get; set; }
-        public decimal? Salary { get; set; }
-        public string Gender { get; set; }
+        public string SubDepartment { get; set; }
         public int? DepartmentId { get; set; }
     }
 }
