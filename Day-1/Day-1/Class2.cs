@@ -48,7 +48,7 @@ namespace Day_1
             //}
 
 
-            IList<Student> studentsList = new List<Student>() { 
+            IList<Student> studentsList = new List<Student>() {
             new Student(){StudentID=1,StudentName="John",Age=18},
               new Student(){StudentID=2,StudentName="Steve",Age=15},
                 new Student(){StudentID=3,StudentName="Bill",Age=20},
@@ -57,19 +57,42 @@ namespace Day_1
 
             };
 
-            var thenByresult = studentsList.OrderBy(s => s.StudentName).ThenBy(s => s.Age);
+            //var thenByresult = studentsList.OrderBy(s => s.StudentName).ThenBy(s => s.Age);
 
-            var thenByDescresult = studentsList.OrderBy(s => s.StudentName).ThenByDescending(s => s.Age);
+            //var thenByDescresult = studentsList.OrderBy(s => s.StudentName).ThenByDescending(s => s.Age);
 
-            Console.WriteLine("======ThenBY===============");
-            foreach (var item in thenByresult)
+            //Console.WriteLine("======ThenBY===============");
+            //foreach (var item in thenByresult)
+            //{
+            //    Console.WriteLine(item.StudentID+" "+ item.StudentName+ " " + item.Age);
+            //}
+            //Console.WriteLine("======ThenBYDesc===============");
+            //foreach (var item in thenByDescresult)
+            //{
+            //    Console.WriteLine(item.StudentID + " " + item.StudentName + " " + item.Age);
+            //}
+
+            //Group By Clause
+
+            var groupedResult = from s in studentsList group s by s.StudentName;
+
+            var groupResult2 = studentsList.GroupBy(x => x.StudentName);
+
+            foreach (var item in groupedResult)
             {
-                Console.WriteLine(item.StudentID+" "+ item.StudentName+ " " + item.Age);
+                Console.WriteLine(item.Key);
             }
-            Console.WriteLine("======ThenBYDesc===============");
-            foreach (var item in thenByDescresult)
+
+            var data = studentsList.Select(x => new { x.StudentID, x.StudentName });
+
+            var data2 = from s in studentsList select new {s.StudentID,s.StudentName };
+
+            var disctinct = studentsList.Select(x=>x.StudentName).Distinct();
+
+            Console.WriteLine("====================");
+            foreach (var item in disctinct)
             {
-                Console.WriteLine(item.StudentID + " " + item.StudentName + " " + item.Age);
+                Console.WriteLine(item);
             }
         }
     }
