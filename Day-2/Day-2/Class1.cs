@@ -8,6 +8,11 @@ namespace Day_2
     //All
     class Class1
     {
+        static void ReportTypeProperties<T>(T obj)
+        {
+            Console.WriteLine("type" + typeof(T).Name);
+            Console.WriteLine("Actual type" + obj.GetType().Name);
+        }
         public static void Main()
         {
             Console.WriteLine("=====All & ANY======");
@@ -107,6 +112,23 @@ namespace Day_2
             {
                 Console.Write(item + " ");
             }
+
+            Console.WriteLine("==============Cast Method=======");
+
+            Student[] studentList1 = 
+            {
+                new Student(){StudentID=1,StudentName="John",Age=18},
+                new Student(){StudentID=2,StudentName="Ram",Age=15},
+                new Student(){StudentID=3,StudentName="Mohan",Age=20},
+                new Student(){StudentID=4,StudentName="Samy",Age=19},
+            };
+            ReportTypeProperties(studentList1);
+            Console.WriteLine("==============post Cast Method=======");
+            ReportTypeProperties(studentList1.Cast<Student>());
+
+            var samplearry=strList1.ToArray<string>();
+            var newList = samplearry.ToList<string>();
+
         }
     }
 }
