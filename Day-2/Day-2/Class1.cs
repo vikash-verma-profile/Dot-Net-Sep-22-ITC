@@ -63,6 +63,50 @@ namespace Day_2
             {
                 Console.WriteLine(item);
             }
+
+            Console.WriteLine("==========Intersect=======");
+            var resultIntersect = strList1.Intersect(strList2);
+            foreach (var item in resultIntersect)
+            {
+                Console.WriteLine(item);
+            }
+            Console.WriteLine("==========Union=======");
+            var resultUnion = strList1.Union(strList2);
+            foreach (var item in resultUnion)
+            {
+                Console.Write(item+" ");
+            }
+            Console.WriteLine();
+            Console.WriteLine("==========SKIP=======");
+            var resultSkip = strList1.Skip(2);
+            foreach (var item in resultSkip)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("==========TAKE=======");
+            var resultTake= strList1.Take(2);
+            foreach (var item in resultTake)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("==========TAKE While=======");
+            var resultTakeWhile = strList1.TakeWhile(s => s.Length < 4);
+            foreach (var item in resultTakeWhile)
+            {
+                Console.Write(item + " ");
+            }
+            Console.WriteLine();
+            Console.WriteLine();
+            Console.WriteLine("==========Skip While=======");
+            var resultSkipWhile = strList1.SkipWhile(s=>s.Length<4);
+            foreach (var item in resultSkipWhile)
+            {
+                Console.Write(item + " ");
+            }
         }
     }
 }
