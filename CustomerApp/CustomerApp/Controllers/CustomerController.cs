@@ -22,5 +22,12 @@ namespace CustomerApp.Controllers
         {
             return db.Customers;
         }
+        [HttpPost]
+        public IActionResult Post(Customer customer)  
+        {
+            db.Customers.Add(customer);
+            db.SaveChanges();
+            return Ok(new { status = "success" });
+        }
     }
 }
