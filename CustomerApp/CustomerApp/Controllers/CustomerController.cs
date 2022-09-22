@@ -29,5 +29,23 @@ namespace CustomerApp.Controllers
             db.SaveChanges();
             return Ok(new { status = "success" });
         }
+
+        [HttpPut]
+        public IActionResult Put(Customer customer)
+        {
+            db.Customers.Update(customer);
+            db.SaveChanges();
+            return Ok(new { status = "your record is updated successfully" });
+        }
+
+
+        [HttpDelete]
+        public IActionResult Delete(int id)
+        {
+            var customerData = db.Customers.Where(x => x.Id == id).FirstOrDefault();
+            db.Customers.Remove(customerData);
+            db.SaveChanges();
+            return Ok(new { status = "your record is deleted successfully" });
+        }
     }
 }
