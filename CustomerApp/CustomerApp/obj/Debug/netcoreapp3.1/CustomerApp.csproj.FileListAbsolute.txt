@@ -13,8 +13,6 @@ C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\CustomerApp\CustomerA
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\CustomerApp\CustomerApp\obj\Debug\netcoreapp3.1\CustomerApp.csproj.CoreCompileInputs.cache
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\CustomerApp\CustomerApp\obj\Debug\netcoreapp3.1\CustomerApp.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\CustomerApp\CustomerApp\obj\Debug\netcoreapp3.1\staticwebassets\CustomerApp.StaticWebAssets.Manifest.cache
-C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\CustomerApp\CustomerApp\obj\Debug\netcoreapp3.1\staticwebassets\CustomerApp.StaticWebAssets.xml
-C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\CustomerApp\CustomerApp\obj\Debug\netcoreapp3.1\scopedcss\bundle\CustomerApp.styles.css
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\CustomerApp\CustomerApp\obj\Debug\netcoreapp3.1\CustomerApp.RazorTargetAssemblyInfo.cache
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\CustomerApp\CustomerApp\obj\Debug\netcoreapp3.1\CustomerApp.dll
 C:\Users\LEVEL UP SOLUTIONS 1\Desktop\Dot-Net-Training-ITC\CustomerApp\CustomerApp\obj\Debug\netcoreapp3.1\CustomerApp.pdb
