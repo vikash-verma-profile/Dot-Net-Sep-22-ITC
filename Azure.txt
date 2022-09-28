@@ -1,0 +1,9 @@
+Cloud
+
+-Private Cloud
+-Public cloud
+-Hybrid Cloud
+
+IAAS
+SAAS
+PAAS
