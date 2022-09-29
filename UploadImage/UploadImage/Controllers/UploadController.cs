@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
+using UploadImage.Models;
 
 namespace UploadImage.Controllers
 {
@@ -14,6 +15,11 @@ namespace UploadImage.Controllers
     [ApiController]
     public class UploadController : ControllerBase
     {
+        ImageDBContext db;
+        public UploadController(ImageDBContext _db)
+        {
+            db = _db;
+        }
         [HttpPost,DisableRequestSizeLimit]
         public async Task<IActionResult> UploadImage()
         {
@@ -25,8 +31,10 @@ namespace UploadImage.Controllers
                 if (file.Length > 0)
                 {
                     var FileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    var _fileName=Path.GetFileNameWithoutExtension(FileName);
+                    FileName = _fileName + DateTime.Now.ToString("yyyyMMddHHmmss")+".jpg";
                     var fullPath = Path.Combine(pathToSave, FileName);
-                    //var dbPath = Path.Combine();
+                    var dbPath = FileName;
                     using (var stream=new FileStream(fullPath, FileMode.Create))
                     {
                         file.CopyTo(stream);
@@ -38,6 +46,11 @@ namespace UploadImage.Controllers
                     var blobstream = System.IO.File.OpenRead(FileName);
                     await blob.UploadAsync(blobstream);
                     var URi = blob.Uri.AbsoluteUri;
+                    var imageObj = new TblImage();
+                    imageObj.ImageUrl = dbPath;
+                    db.TblImages.Add(imageObj);
+                    db.SaveChanges();
+                    DeleteFile(fullPath);
                     return Ok(new { Message="Your Image is uploaded successfully"});
                 }
                 else
@@ -51,5 +64,13 @@ namespace UploadImage.Controllers
                 return StatusCode(500);
             }
         }
+        private void DeleteFile(string path)
+        {
+            if (System.IO.File.Exists(path))
+            {
+                System.IO.File.Delete(path);
+            }
+        }
     }
+
 }

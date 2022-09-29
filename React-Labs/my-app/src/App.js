@@ -28,6 +28,15 @@ function App() {
 
       <button type="submit">Upload</button>
         </form>
+
+
+        <table border="1">
+          <tr>
+            <td>ID</td>
+            <td>Image</td>
+          </tr>
+          
+          </table>
     </div>
   );
 }
