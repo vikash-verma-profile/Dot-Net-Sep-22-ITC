@@ -28,7 +28,7 @@ namespace UploadImage.Controllers
         public IActionResult Login(TblLogin tblLogin)
         {
            var token= GenerateToken(tblLogin);
-            return Ok(new { Token=token});
+            return Ok(new { Token=token,LoginData=tblLogin});
         }
 
         private string GenerateToken(TblLogin login)

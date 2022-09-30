@@ -62,7 +62,7 @@ namespace UploadImage
             app.UseRouting();
             app.UseSwagger();
             app.UseSwaggerUI();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
