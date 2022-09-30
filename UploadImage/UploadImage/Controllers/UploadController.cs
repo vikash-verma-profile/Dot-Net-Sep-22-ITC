@@ -46,10 +46,13 @@ namespace UploadImage.Controllers
                     var blobstream = System.IO.File.OpenRead(FileName);
                     await blob.UploadAsync(blobstream);
                     var URi = blob.Uri.AbsoluteUri;
+                    //adding record to db
                     var imageObj = new TblImage();
                     imageObj.ImageUrl = dbPath;
                     db.TblImages.Add(imageObj);
                     db.SaveChanges();
+
+
                     DeleteFile(fullPath);
                     return Ok(new { Message="Your Image is uploaded successfully"});
                 }
