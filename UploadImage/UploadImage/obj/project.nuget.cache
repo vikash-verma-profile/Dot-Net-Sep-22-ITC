@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "fGnZGmByZHY4CX3WElH+PTXJNEifEVbztEFva9TA/z2khb0Nb5aiHoXZyZwH9OdfWAHR8G01y9Uf6bRqXfzDfA==",
+  "dgSpecHash": "q+hAsYFZV41JUyas/SryEGL1liMgmDVnu+zVDVXO3+SZtlDXV60yfHAcNdNLSXXTRkS3YyZ2QYFL5dmbAYuXxQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\LEVEL UP SOLUTIONS 1\\Desktop\\Dot-Net-Training-ITC\\UploadImage\\UploadImage\\UploadImage.csproj",
   "expectedPackageFiles": [
@@ -8,6 +8,7 @@
     "C:\\Users\\LEVEL UP SOLUTIONS 1\\.nuget\\packages\\azure.storage.blobs\\12.13.1\\azure.storage.blobs.12.13.1.nupkg.sha512",
     "C:\\Users\\LEVEL UP SOLUTIONS 1\\.nuget\\packages\\azure.storage.common\\12.12.0\\azure.storage.common.12.12.0.nupkg.sha512",
     "C:\\Users\\LEVEL UP SOLUTIONS 1\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
+    "C:\\Users\\LEVEL UP SOLUTIONS 1\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.29\\microsoft.aspnetcore.authentication.jwtbearer.3.1.29.nupkg.sha512",
     "C:\\Users\\LEVEL UP SOLUTIONS 1\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\LEVEL UP SOLUTIONS 1\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\LEVEL UP SOLUTIONS 1\\.nuget\\packages\\microsoft.data.sqlclient\\2.0.1\\microsoft.data.sqlclient.2.0.1.nupkg.sha512",

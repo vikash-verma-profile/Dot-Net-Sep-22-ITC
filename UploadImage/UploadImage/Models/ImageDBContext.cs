@@ -18,15 +18,8 @@ namespace UploadImage.Models
         }
 
         public virtual DbSet<TblImage> TblImages { get; set; }
+        public virtual DbSet<TblLogin> TblLogins { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-                optionsBuilder.UseSqlServer("Data Source=DESKTOP-PP0TB7N;Initial Catalog=ImageDB;Integrated Security=True");
-            }
-        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -38,6 +31,17 @@ namespace UploadImage.Models
 
                 entity.Property(e => e.ImageUrl)
                     .HasMaxLength(2000)
+                    .IsUnicode(false);
+            });
+
+            modelBuilder.Entity<TblLogin>(entity =>
+            {
+                entity.ToTable("tblLogin");
+
+                entity.Property(e => e.Password).HasMaxLength(100);
+
+                entity.Property(e => e.UserName)
+                    .HasMaxLength(100)
                     .IsUnicode(false);
             });
 
