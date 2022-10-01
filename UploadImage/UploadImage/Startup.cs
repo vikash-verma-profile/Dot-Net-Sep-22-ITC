@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +32,34 @@ namespace UploadImage
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            services.AddSwaggerGen();
+            services.AddSwaggerGen(x=> 
+            { 
+                x.SwaggerDoc("v1", new OpenApiInfo { Title = "CustomerApp", Version = "v1" });
+                x.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme() 
+                { 
+                    Name="Authorization",
+                    Type=SecuritySchemeType.ApiKey,
+                    Scheme="Bearer",
+                    BearerFormat="JWT",
+                    In=ParameterLocation.Header,
+                    Description="Please enter token in format bearer [space] <token>"
+                });
+                x.AddSecurityRequirement(new OpenApiSecurityRequirement {
+                    {
+                        new OpenApiSecurityScheme
+                        {
+
+                            Reference=new OpenApiReference
+                            {
+                                Type=ReferenceType.SecurityScheme,
+                                Id="Bearer"
+                            }
+                        },
+                        new string[]{ }
+                    }
+                });
+            });
+
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(options=>
             {
                 options.TokenValidationParameters = new TokenValidationParameters
