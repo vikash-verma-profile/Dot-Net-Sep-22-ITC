@@ -27,8 +27,16 @@ namespace UploadImage.Controllers
         [HttpPost]
         public IActionResult Login(TblLogin tblLogin)
         {
-           var token= GenerateToken(tblLogin);
-            return Ok(new { Token=token,LoginData=tblLogin});
+           if(db.TblLogins.Any(x=>x.Password==tblLogin.Password && x.UserName == tblLogin.UserName))
+            {
+                var token = GenerateToken(tblLogin);
+                return Ok(new { Token = token ,Message = "successful login" });
+            }
+            else
+            {
+                return Ok(new { Token = "", Message = "userName or password is incorrect" });
+            }
+         
         }
 
         private string GenerateToken(TblLogin login)
