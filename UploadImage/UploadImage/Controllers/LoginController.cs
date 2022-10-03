@@ -25,6 +25,7 @@ namespace UploadImage.Controllers
             config = _config;
         }
         [HttpPost]
+        [Route("login-user")]
         public IActionResult Login(TblLogin tblLogin)
         {
            if(db.TblLogins.Any(x=>x.Password==tblLogin.Password && x.UserName == tblLogin.UserName))
@@ -37,6 +38,23 @@ namespace UploadImage.Controllers
                 return Ok(new { Token = "", Message = "userName or password is incorrect" });
             }
          
+        }
+
+        [HttpPost]
+        [Route("register-user")]
+        public IActionResult Register(TblLogin tblLogin)
+        {
+            if (db.TblLogins.Any(x =>x.UserName == tblLogin.UserName))
+            {
+                return Ok(new { Token = "", Message = "email id already exists!!.Please use different email" });
+            }
+            else
+            {
+                db.TblLogins.Add(tblLogin);
+                db.SaveChanges();
+                var Token=GenerateToken(tblLogin);
+                return Ok(new { Token = Token, Message = "user added successfully" });
+            }
         }
 
         private string GenerateToken(TblLogin login)

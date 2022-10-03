@@ -1,7 +1,7 @@
 import {useState} from 'react';
 
 import loginImage from './Images/login-security.png';
-const Login = () => {
+const Register = () => {
     const [userName,SetUserName]=useState("");
     const [password,SetPassword]=useState("");
     const handleSubmit=async (e) => {
@@ -11,7 +11,7 @@ const Login = () => {
             password:password
         };
         //console.log(requestData);
-        const data = await fetch("https://localhost:44374/api/Login", {
+        const data = await fetch("https://localhost:44374/api/Login/register-user", {
             method: "post",
             headers:{'Content-Type':'application/json'},
             body: JSON.stringify(requestData),
@@ -30,7 +30,7 @@ const Login = () => {
                         </div>
                         <div className="col-md-8">
                             <div className="card-body">
-                                <h5 className="card-title">SignIn</h5>
+                                <h5 className="card-title">Register</h5>
                                 <form onSubmit={handleSubmit}>
                                     <div className="mb-3">
                                         <label className="form-label">Email address</label>
@@ -55,4 +55,4 @@ const Login = () => {
         </div>
     );
 };
-export default Login;
+export default Register;
