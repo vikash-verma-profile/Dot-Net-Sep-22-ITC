@@ -7,3 +7,6 @@ docker tag webapplication3:dev a1hnrzk1/webapplication:dev
 Step-2
 push your image on remote location
 docker push a1hnrzk1/webapplication:dev
+
+
+docker run -d -p 8080:80 a1hnrzk1/webapplication:dev
