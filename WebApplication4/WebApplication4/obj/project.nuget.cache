@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "Nw+mTI+HZTI/NW+lXYsoXBu338sGAUoicHuB5WcGyuaiiHFm10k03C1EFS7+irQI0nvXfyBhz4u08IJ6WHdm3Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\LEVEL UP SOLUTIONS 1\\Desktop\\Dot-Net-Training-ITC\\WebApplication4\\WebApplication4\\WebApplication4.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\LEVEL UP SOLUTIONS 1\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.11.1\\microsoft.visualstudio.azure.containers.tools.targets.1.11.1.nupkg.sha512"
+  ],
+  "logs": []
+}

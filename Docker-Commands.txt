@@ -4,9 +4,31 @@ Step-1
 Tag your Image
 docker tag webapplication3:dev a1hnrzk1/webapplication:dev
 
+docker tag webapplication4:dev a1hnrzk1/webapi:dev
+
 Step-2
 push your image on remote location
 docker push a1hnrzk1/webapplication:dev
 
+docker push a1hnrzk1/webapi:dev
 
 docker run -d -p 8080:80 a1hnrzk1/webapplication:dev
+
+docker run -d -p 8080:80 a1hnrzk1/webapi:dev
+
+a1hnrzk1/webapi:latest
+
+=============================================
+
+azure cli commands
+
+az login
+az group create --location --name --tags
+
+az network vnet create --name --resource-group --address-prefixes --subnet-name --subnet-prefix
+
+az vm create --resource-group --name --image --vnet-name --subnet
+
+az vm create -n vm1 -g  test-rg-5 --image UbuntuLTS
+
+az vm create --admin-password LevelupSolutions@007 --admin-username adminazure --name vm1 --resource-group  test-rg-5 --image UbuntuLTS

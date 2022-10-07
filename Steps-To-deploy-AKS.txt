@@ -1,0 +1,27 @@
+Step-1
+Docker Image
+Step-2
+Create an Azure container registry
+Step-3
+Push the docker image to ACR
+Step-4
+Create a Kubernetes deployment cluster
+Step-5
+Create a Kubernetes deployment Manifest
+Step-6
+Deploy our application
+
+
+az group create -n test-aks -l eastus
+--to check weather name is available or not
+az acr check-name -n testacr551
+
+az acr create -n  testacr551 -g test-aks --admin-enabled false --sku Basic
+
+testacr551.azurecr.io/webapi:dev
+
+>docker tag a1hnrzk1/webapi:dev testacr551.azurecr.io/webapi:dev
+
+>az acr login -n testacr551
+
+>docker push testacr551.azurecr.io/webapi:dev
