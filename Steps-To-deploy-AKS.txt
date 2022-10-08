@@ -2,6 +2,8 @@ Step-1
 Docker Image
 Step-2
 Create an Azure container registry
+
+az acr create -n  testacr551 -g test-aks551 --admin-enabled false --sku Basic
 Step-3
 Push the docker image to ACR
 Step-4
@@ -12,11 +14,13 @@ Step-6
 Deploy our application
 
 
+
+
 az group create -n test-aks -l eastus
 --to check weather name is available or not
 az acr check-name -n testacr551
 
-az acr create -n  testacr551 -g test-aks --admin-enabled false --sku Basic
+az acr create -n  testacr551 -g test-aks551 --admin-enabled false --sku Basic
 
 testacr551.azurecr.io/webapi:dev
 
@@ -25,3 +29,8 @@ testacr551.azurecr.io/webapi:dev
 >az acr login -n testacr551
 
 >docker push testacr551.azurecr.io/webapi:dev
+
+
+>az aks create -n aks-demo --resource-group test-aks --enable-managed-identity --attach-acr $(az acr show -n testacr551 -g test-aks --query id -o tsv) --node-count 1
+
+>az aks create --resource-group test-aks  --name aks-demo  --enable-managed-identity --attach-acr "/subscriptions/76aed7ea-de8f-4f23-9dc5-a8687a2b43f6/resourceGroups/test-aks551/providers/Microsoft.ContainerRegistry/registries/testacr551"
