@@ -34,3 +34,12 @@ testacr551.azurecr.io/webapi:dev
 >az aks create -n aks-demo --resource-group test-aks --enable-managed-identity --attach-acr $(az acr show -n testacr551 -g test-aks --query id -o tsv) --node-count 1
 
 >az aks create --resource-group test-aks  --name aks-demo  --enable-managed-identity --attach-acr "/subscriptions/76aed7ea-de8f-4f23-9dc5-a8687a2b43f6/resourceGroups/test-aks551/providers/Microsoft.ContainerRegistry/registries/testacr551"
+>ACR_ID=$(az acr show -n testacr551 -g test-aks --query id -o tsv)
+
+
+az aks create -n aks-demo --resource-group test-aks  --attach-acr "/subscriptions/76aed7ea-de8f-4f23-9dc5-a8687a2b43f6/resourceGroups/test-aks551/providers/Microsoft.ContainerRegistry/registries/testacr551" --node-count 1
+
+
+
+
+
