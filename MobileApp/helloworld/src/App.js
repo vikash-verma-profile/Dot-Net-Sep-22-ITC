@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { IonApp, IonContent, IonHeader, IonToolbar, IonButton, IonToast, useIonToast, IonTitle, IonInput, IonItem, IonLabel, IonDatetime } from '@ionic/react';
+import { IonApp, IonContent, IonHeader, IonToolbar, IonButton, IonToast, useIonToast, IonTitle, IonInput, IonItem, IonLabel, IonDatetime, IonCard, IonCardTitle, IonCardContent } from '@ionic/react';
 
 function App() {
   // const [showToast,setShowToast]=useState(false);
@@ -21,18 +21,31 @@ function App() {
         </IonToolbar>
       </IonHeader>
       <IonContent className='ion-padding'>
-        <IonItem>
+        {/* <IonItem>
           <IonLabel position='stacked'>Name :</IonLabel>
           <IonInput value={name} onIonChange={(event)=>setName(event.detail.value)}/>
-        </IonItem>
+        </IonItem> */}
         <IonItem>
           <IonLabel position='stacked'>Date of Birth :</IonLabel>
           <IonDatetime showDefaultButtons={true}  presentation="date" displayFormat="D MMM YYYY" value={birthDate} 
             onIonChange={(event)=>setBirthDate(event.detail.value)}
           />
         </IonItem>
-        <p>Name: {name}</p>
-        <p>Date of Birth: {birthDate}</p>
+        {/* <p>Name: {name}</p> */}
+        {/* <p>Date of Birth: {birthDate}</p> */}
+
+        <IonCard className='ion-text-center'>
+          <IonHeader>
+            <IonCardTitle>The Title</IonCardTitle>
+          </IonHeader>
+          <IonCardContent>
+          
+          <p>Physical :83 %</p>
+          <p>Physical :83 %</p>
+          <p>Physical :83 %</p>
+          </IonCardContent>
+
+        </IonCard>
       </IonContent>
     </IonApp>
   );
