@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IonApp, IonContent, IonHeader, IonToolbar, IonButton, IonToast, useIonToast, IonTitle, IonInput, IonItem, IonLabel, IonDatetime, IonCard, IonCardTitle, IonCardContent } from '@ionic/react';
+import BioCard from './components/BioCard';
 
 function App() {
   // const [showToast,setShowToast]=useState(false);
@@ -7,11 +8,8 @@ function App() {
   //   setShowToast(true);
   //   setTimeout(()=>setShowToast(false),1500);
   // }
-  const dismiss=()=>{
-    const picker=window.document.querySelector('ion-picker');
-    if(picker) picker.dismiss()
-  }
   const [name,setName]=useState('');
+  const targetDate=new Date().toISOString();
   const [birthDate,setBirthDate]=useState('2020-01-31');
   return (
     <IonApp>
@@ -31,21 +29,11 @@ function App() {
             onIonChange={(event)=>setBirthDate(event.detail.value)}
           />
         </IonItem>
+
+
         {/* <p>Name: {name}</p> */}
         {/* <p>Date of Birth: {birthDate}</p> */}
-
-        <IonCard className='ion-text-center'>
-          <IonHeader>
-            <IonCardTitle>The Title</IonCardTitle>
-          </IonHeader>
-          <IonCardContent>
-          
-          <p>Physical :83 %</p>
-          <p>Physical :83 %</p>
-          <p>Physical :83 %</p>
-          </IonCardContent>
-
-        </IonCard>
+        <BioCard targetDate={targetDate}/>
       </IonContent>
     </IonApp>
   );
