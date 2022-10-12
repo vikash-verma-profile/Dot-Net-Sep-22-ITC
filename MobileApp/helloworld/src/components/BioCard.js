@@ -1,11 +1,12 @@
 import { IonCard, IonCardContent, IonCardTitle, IonHeader } from '@ionic/react';
 import React from 'react';
 import dayjs from 'dayjs';
-function formatDate(isoString){
+import BioChart from './BioChart';
+function formatDate(isoString) {
     return dayjs(isoString).format('D MMM YYYY');
 }
 
-function BioCard({targetDate}) {
+function BioCard({ targetDate }) {
     return (<div>
 
         <IonCard className='ion-text-center'>
@@ -13,7 +14,7 @@ function BioCard({targetDate}) {
                 <IonCardTitle>{formatDate(targetDate)}</IonCardTitle>
             </IonHeader>
             <IonCardContent>
-
+                <BioChart />                
                 <p>Physical :83 %</p>
                 <p>Physical :83 %</p>
                 <p>Physical :83 %</p>
