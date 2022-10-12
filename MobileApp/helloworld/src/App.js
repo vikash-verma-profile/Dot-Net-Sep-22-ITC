@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IonApp, IonContent, IonHeader, IonToolbar, IonButton, IonToast, useIonToast, IonTitle, IonInput, IonItem, IonLabel, IonDatetime, IonCard, IonCardTitle, IonCardContent } from '@ionic/react';
 import BioCard from './components/BioCard';
+import {useLocalStorage} from './hooks';
 
 function App() {
   // const [showToast,setShowToast]=useState(false);
@@ -10,7 +11,8 @@ function App() {
   // }
   const [name,setName]=useState('');
   const targetDate=new Date().toISOString();
-  const [birthDate,setBirthDate]=useState('2020-01-31');
+  // const [birthDate,setBirthDate]=useState('2020-01-31');
+  const [birthDate,setBirthDate]=useLocalStorage('birthDate','');
   return (
     <IonApp>
       <IonHeader>
