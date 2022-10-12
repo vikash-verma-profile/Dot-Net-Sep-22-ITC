@@ -7,7 +7,10 @@ function App() {
   //   setShowToast(true);
   //   setTimeout(()=>setShowToast(false),1500);
   // }
-
+  const dismiss=()=>{
+    const picker=window.document.querySelector('ion-picker');
+    if(picker) picker.dismiss()
+  }
   const [name,setName]=useState('');
   const [birthDate,setBirthDate]=useState('2020-01-31');
   return (
@@ -24,7 +27,7 @@ function App() {
         </IonItem>
         <IonItem>
           <IonLabel position='stacked'>Date of Birth :</IonLabel>
-          <IonDatetime displayFormat="D MMM YYYY" value={birthDate} 
+          <IonDatetime showDefaultButtons={true}  presentation="date" displayFormat="D MMM YYYY" value={birthDate} 
             onIonChange={(event)=>setBirthDate(event.detail.value)}
           />
         </IonItem>

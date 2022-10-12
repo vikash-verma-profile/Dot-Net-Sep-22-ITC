@@ -1,0 +1,4 @@
+Step-1
+Create react project
+Step-2
+npm install -g @ionic/react 
