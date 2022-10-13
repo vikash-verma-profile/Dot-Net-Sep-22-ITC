@@ -2,11 +2,14 @@ import { IonCard, IonCardContent, IonCardTitle, IonHeader } from '@ionic/react';
 import React from 'react';
 import dayjs from 'dayjs';
 import BioChart from './BioChart';
+import { calculateBios } from './calculations';
 function formatDate(isoString) {
     return dayjs(isoString).format('D MMM YYYY');
 }
 
-function BioCard({ targetDate }) {
+function BioCard({ birthDate, targetDate }) {
+
+    const { physical, emotional, intellectual } = calculateBios(birthDate, targetDate);
     return (<div>
 
         <IonCard className='ion-text-center'>
@@ -14,10 +17,10 @@ function BioCard({ targetDate }) {
                 <IonCardTitle>{formatDate(targetDate)}</IonCardTitle>
             </IonHeader>
             <IonCardContent>
-                <BioChart />                
-                <p>Physical :83 %</p>
-                <p>Physical :83 %</p>
-                <p>Physical :83 %</p>
+                <BioChart birthDate={birthDate} targetDate={targetDate} />
+                <p>Physical : {physical}</p>
+                <p>Emotional :{emotional}</p>
+                <p>Intellectual :{intellectual}</p>
             </IonCardContent>
 
         </IonCard>
