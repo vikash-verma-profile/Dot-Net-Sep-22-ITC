@@ -1,0 +1,12 @@
+.bio-card p{
+    line-height: normal;
+}
+.bio-card .physical{
+    color:green;
+}
+.bio-card .intellectual{
+    color:blue;
+}
+.bio-card  .emotional{
+    color: red;
+}

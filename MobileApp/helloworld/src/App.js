@@ -11,9 +11,11 @@ function App() {
   //   setTimeout(()=>setShowToast(false),1500);
   // }
   const [name,setName]=useState('');
-  const targetDate=new Date().toISOString();
+  // const targetDate=new Date().toISOString();
   // const [birthDate,setBirthDate]=useState('2020-01-31');
-  const [birthDate,setBirthDate]=useLocalStorage('birthDate','');
+  //const [birthDate,setBirthDate]=useLocalStorage('birthDate','');
+  const [birthDate,setBirthDate]=useState(new Date().toISOString());
+  const [targetDate,setTargetDate]=useState(new Date().toISOString());
   return (
     <IonApp>
       <IonHeader>
@@ -27,16 +29,21 @@ function App() {
           <IonInput value={name} onIonChange={(event)=>setName(event.detail.value)}/>
         </IonItem> */}
         <IonItem>
-          <IonLabel position='stacked'>Date of Birth :</IonLabel>
-          <IonDatetime showDefaultButtons={true}  presentation="date" displayFormat="D MMM YYYY" value={birthDate} 
+          <IonLabel position='fixed'>Date of Birth :</IonLabel>
+          <IonDatetime  displayFormat="D MMM YYYY" value={birthDate} 
             onIonChange={(event)=>setBirthDate(event.detail.value)}
           />
         </IonItem>
-
+        <IonItem>
+          <IonLabel position='fixed'>Target Date :</IonLabel>
+          <IonDatetime  displayFormat="D MMM YYYY" value={targetDate} 
+            onIonChange={(event)=>setTargetDate(event.detail.value)}
+          />
+        </IonItem>
 
         {/* <p>Name: {name}</p> */}
         {/* <p>Date of Birth: {birthDate}</p> */}
-        <BioCard targetDate={targetDate}/>
+        <BioCard  birthDate={birthDate} targetDate={targetDate}/>
       </IonContent>
     </IonApp>
   );

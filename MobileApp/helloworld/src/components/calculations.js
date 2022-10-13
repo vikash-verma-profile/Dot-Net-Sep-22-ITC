@@ -9,6 +9,7 @@ function calculateBio(birthDate, targetDate, cycle) {
 
 export function calculateBios(birthDate, targetDate) {
     return {
+        date:targetDate,
         physical: calculateBio(birthDate, targetDate, 23),
         emotional: calculateBio(birthDate, targetDate, 28),
         intellectual: calculateBio(birthDate, targetDate, 33)
