@@ -5,13 +5,14 @@ import ExploreContainer from '../components/ExploreContainer';
 
 const EntryPage: React.FC = () => {
 
-    let {userID}  = useParams();
-    console.log(userID);
+    let userID: any = {}
+    userID= useParams();
+    console.log(userID.id);
     return (
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>Entry </IonTitle>
+                    <IonTitle>Entry {userID.id} </IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
