@@ -1,4 +1,5 @@
 import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { Link } from 'react-router-dom';
 import ExploreContainer from '../components/ExploreContainer';
 
 const SettingsPage: React.FC = () => {
@@ -10,12 +11,7 @@ const SettingsPage: React.FC = () => {
         </IonToolbar>
       </IonHeader>
       <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer />
+        Go to <Link to="/home">Home</Link>
       </IonContent>
     </IonPage>
   );
