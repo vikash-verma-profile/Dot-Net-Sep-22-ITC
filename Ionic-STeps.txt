@@ -1,0 +1,7 @@
+Step-1
+
+npm install -g @ionic/cli
+
+ionic start my-app blank 
+
+ionic serve
