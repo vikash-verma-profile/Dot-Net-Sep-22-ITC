@@ -1,5 +1,7 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent, IonHeader, IonItem, IonList, IonPage, IonTitle, IonToolbar } from '@ionic/react';
 import ExploreContainer from '../components/ExploreContainer';
+
+import { entries } from '../data';
 
 const HomePage: React.FC = () => {
   return (
@@ -9,13 +11,15 @@ const HomePage: React.FC = () => {
           <IonTitle>Home</IonTitle>
         </IonToolbar>
       </IonHeader>
-      <IonContent fullscreen>
-        <IonHeader collapse="condense">
-          <IonToolbar>
-            <IonTitle size="large">Blank</IonTitle>
-          </IonToolbar>
-        </IonHeader>
-        <ExploreContainer />
+      <IonContent className='ion-padding'>
+          <IonList>
+          {
+            entries.map((entry)=>
+            <IonItem button key={entry.id} routerLink={`/entries/${entry.id}`} >{entry.title}</IonItem>
+            )
+          }
+
+          </IonList>
       </IonContent>
     </IonPage>
   );
