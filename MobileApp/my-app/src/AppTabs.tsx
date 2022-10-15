@@ -27,13 +27,15 @@ import { home as homeIcon, settings as settingsIcon } from 'ionicons/icons';
 import './theme/variables.css';
 import LoginPage from './pages/LoginPage';
 import { useState } from 'react';
+import { useAuth } from './auth';
 
 setupIonicReact();
 
-interface Props{
-    loggedIn:Boolean
-}
-const AppTabs: React.FC<Props> = ({loggedIn}) => {
+// interface Props{
+//     loggedIn:Boolean
+// }
+const AppTabs: React.FC= () => {
+    const {loggedIn}=useAuth();
 if(!loggedIn){
     return <Redirect to="/login" />
 }

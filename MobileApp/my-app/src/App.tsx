@@ -19,6 +19,7 @@ import '@ionic/react/css/display.css';
 import './theme/variables.css';
 import LoginPage from './pages/LoginPage';
 import { useState } from 'react';
+import {AuthContext} from './auth';
 
 setupIonicReact();
 
@@ -26,17 +27,19 @@ const App: React.FC = () => {
   const [loggedIn, SetLoggedIn] = useState(false);
   return (
     <IonApp>
+      <AuthContext.Provider value={{loggedIn}}>
       <IonReactRouter>
           <IonRouterOutlet>
             <Route exact path="/login">
-              <LoginPage loggedIn={loggedIn} onLogin={()=>SetLoggedIn(true)}/>
+              <LoginPage onLogin={()=>SetLoggedIn(true)}/>
             </Route>
             <Route path="/my">
-              <AppTabs loggedIn={loggedIn}/>
+              <AppTabs/>
             </Route>
             <Redirect exact path="/" to="/my/entries" />
           </IonRouterOutlet>
       </IonReactRouter>
+      </AuthContext.Provider>
     </IonApp>
   );
 
