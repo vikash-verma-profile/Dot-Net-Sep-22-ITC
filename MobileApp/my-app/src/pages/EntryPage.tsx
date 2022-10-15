@@ -1,4 +1,4 @@
-import { IonContent, IonHeader, IonPage, IonTitle, IonToolbar } from '@ionic/react';
+import { IonContent,IonButtons, IonHeader, IonPage, IonTitle, IonToolbar, IonBackButton } from '@ionic/react';
 import { useParams } from 'react-router-dom';
 import { entries } from '../data';
 
@@ -16,7 +16,10 @@ const EntryPage: React.FC = () => {
         <IonPage>
             <IonHeader>
                 <IonToolbar>
-                    <IonTitle>Entry {userID.id} </IonTitle>
+                    <IonButtons slot="start">
+                        <IonBackButton/>
+                    </IonButtons>
+                    <IonTitle>{entry.title} </IonTitle>
                 </IonToolbar>
             </IonHeader>
             <IonContent fullscreen>
