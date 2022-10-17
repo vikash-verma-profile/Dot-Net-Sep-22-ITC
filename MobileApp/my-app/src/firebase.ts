@@ -1,5 +1,7 @@
-import * as firebase from 'firebase/app';
-import 'firebase/auth';
+import firebase from 'firebase/app';
+import  'firebase/auth';
+
+
 const firebaseConfig = {
     apiKey: "AIzaSyAzd6RxMv6aVQks1g572SLIOSSJhiTboeQ",
     authDomain: "daily-moments-7d7e3.firebaseapp.com",
