@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import './question.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -21,9 +23,9 @@ class MyApp extends StatelessWidget {
       ),
       body: Column(
         children: [
-          Text(question[0]),
+          Question(question[0]),
           ElevatedButton(
-            child: const Text('Answer 1'),
+            child: Text('Answer 1'),
             onPressed: answerQuestion,
           ),
           ElevatedButton(
